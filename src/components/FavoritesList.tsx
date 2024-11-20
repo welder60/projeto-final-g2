@@ -1,7 +1,12 @@
-import React from 'react';
 import MovieCard from './MovieCard';
+import { Movie } from '../types';
 
-const FavoritesList = ({ favorites, onRemoveFavorite }) => {
+interface FavoritesListProps {
+  favorites: Movie[];
+  onRemoveFavorite: (movieId: number) => void;
+}
+
+const FavoritesList: React.FC<FavoritesListProps> = ({ favorites, onRemoveFavorite }) => {
   return (
     <div>
       <h2 className="text-xl font-bold mb-4">Seus Favoritos</h2>
@@ -11,7 +16,8 @@ const FavoritesList = ({ favorites, onRemoveFavorite }) => {
             <MovieCard
               key={movie.id}
               movie={movie}
-              onFavorite={onRemoveFavorite}
+              onFavorite={() => onRemoveFavorite(movie.id)} // Extraindo o ID do objeto Movie
+              isFavorite={true}
             />
           ))}
         </div>

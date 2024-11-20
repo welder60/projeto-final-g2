@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 
-const Register = () => {
+// Interface para os dados do formulário
+interface FormData {
+  name: string;
+  email: string;
+  password: string;
+}
+
+// Interface para os erros de validação
+interface FormErrors {
+  name?: string;
+  email?: string;
+  password?: string;
+}
+
+const Register: React.FC = () => {
   // Estado para armazenar os dados do formulário
-  const [form, setForm] = useState({ name: '', email: '', password: '' });
-  const [errors, setErrors] = useState({}); // Estado para armazenar os erros de validação
+  const [form, setForm] = useState<FormData>({ name: '', email: '', password: '' });
+  const [errors, setErrors] = useState<FormErrors>({}); // Estado para armazenar os erros de validação
 
   // Função para validar o formulário
-  const validateForm = () => {
-    const newErrors = {};
+  const validateForm = (): FormErrors => {
+    const newErrors: FormErrors = {};
     if (!form.name) newErrors.name = 'O nome é obrigatório.';
     if (!form.email) newErrors.email = 'O email é obrigatório.';
     else if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.email = 'Email inválido.';
@@ -17,7 +31,7 @@ const Register = () => {
   };
 
   // Função para lidar com o envio do formulário
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     const validationErrors = validateForm(); // Valida o formulário
@@ -42,7 +56,9 @@ const Register = () => {
         type="text"
         placeholder="Nome"
         value={form.name}
-        onChange={(e) => setForm({ ...form, name: e.target.value })}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setForm({ ...form, name: e.target.value })
+        }
         className="mb-2 w-full p-2 border"
       />
       {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
@@ -52,7 +68,9 @@ const Register = () => {
         type="email"
         placeholder="Email"
         value={form.email}
-        onChange={(e) => setForm({ ...form, email: e.target.value })}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setForm({ ...form, email: e.target.value })
+        }
         className="mb-2 w-full p-2 border"
       />
       {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
@@ -62,7 +80,9 @@ const Register = () => {
         type="password"
         placeholder="Senha"
         value={form.password}
-        onChange={(e) => setForm({ ...form, password: e.target.value })}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setForm({ ...form, password: e.target.value })
+        }
         className="mb-2 w-full p-2 border"
       />
       {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}

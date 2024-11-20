@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/global.css'; // Importa o arquivo de estilos globais
 import App from './App'; // Importa o componente App

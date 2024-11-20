@@ -1,6 +1,15 @@
+// src/components/MovieCard.tsx
 import React, { useState } from 'react';
+import { Movie } from '../types';  // Ajuste o caminho conforme necessário
 
-const MovieCard = ({ movie, onFavorite, isFavorite }) => {
+// Tipagem para as props do MovieCard
+interface MovieCardProps {
+  movie: Movie;                  // O filme que será exibido
+  onFavorite: (movie: Movie) => void;  // Função que é chamada ao favoritar ou remover o filme
+  isFavorite: boolean;           // Indica se o filme é favorito
+}
+
+const MovieCard: React.FC<MovieCardProps> = ({ movie, onFavorite, isFavorite }) => {
   const [isMovieFavorited, setIsMovieFavorited] = useState(isFavorite);
 
   const handleFavoriteClick = () => {
