@@ -1,24 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "target": "ES2020",                       // Configura o target para a versão do ECMAScript
+    "useDefineForClassFields": true,           // Para usar 'define' para campos de classe
+    "module": "ESNext",                        // Para módulos ESNext
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],  // Definir bibliotecas para o projeto
+    "skipLibCheck": true,                      // Ignorar verificações de tipo para arquivos de biblioteca
+    "moduleResolution": "Bundler",             // Resolver módulos de maneira mais eficiente
+    "allowImportingTsExtensions": true,        // Permitir importações com extensões .ts e .tsx
+    "isolatedModules": true,                   // Modo isolado de módulos, sem emitir código
+    "moduleDetection": "force",                // Forçar detecção de módulos
+    "noEmit": true,                            // Não gerar arquivos de saída (usado em bundlers como o Vite)
+    "strict": true,                            // Ativar as verificações de tipo estritas
+    "noUnusedLocals": true,                    // Mostrar erros para variáveis locais não usadas
+    "noUnusedParameters": true,                // Mostrar erros para parâmetros não usados
+    "noFallthroughCasesInSwitch": true,        // Evitar quedas em switches
+    "noUncheckedSideEffectImports": true,      // Evitar imports com efeitos colaterais não verificados
+    
+    // Adicionando a opção de JSX:
+    "jsx": "react-jsx",                       // Habilitar o JSX no TypeScript (para React 17+)
+    "esModuleInterop": true                    // Garantir que os módulos sejam importados de forma correta
   },
-  "include": ["src"]
+  "include": ["src"]                            // Incluir todos os arquivos dentro da pasta src
 }
