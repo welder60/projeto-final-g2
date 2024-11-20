@@ -65,7 +65,7 @@ Este é o projeto final do processo trainee da Orc'estra Gamificação. A aplica
 ---
 
 ## 🌐 Deploy
-A aplicação está disponível online no [Vercel](#). *(adicione o link do deploy aqui após o upload)*
+A aplicação está disponível online no [Vercel](#). *(https://projeto-final-g2.vercel.app/)*
 
 ---
 
