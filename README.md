@@ -1,7 +1,3 @@
-Aqui está um modelo de README para o seu repositório:
-
----
-
 # 🎬 Projeto Final G2 - Aplicação de Filmes com TMDB
 
 ## 📖 Sobre o Projeto
